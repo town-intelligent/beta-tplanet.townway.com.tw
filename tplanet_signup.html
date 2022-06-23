@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+    <script src="/static/js/localStorage.js"></script>
+    <script src="/static/js/config.js"></script>
+
+    <script>
+      function onSubmit() {
+        // Check format
+        var password = $("#password").val()
+        var cfm_password = $("#cfm_password").val()
+
+        if (password.length < 8 || cfm_password.length < 8) {
+          document.getElementById("war_msg").innerHTML = "密碼不得少於 8 字元";
+          return;
+        }
+        if (password != cfm_password) {
+          document.getElementById("war_msg").innerHTML = "兩次輸入的密碼不一致";
+          return;
+        }
+
+        var dataJSON = {};
+        dataJSON.username =  $("#username").val();
+        dataJSON.password =  $("#password").val();
+        dataJSON.email =  $("#email").val();
+        $.ajax({
+          url: HOST_URL_EID_DAEMON + "/accounts/signup",
+          type: "POST",
+          crossDomain: true,
+          data:  dataJSON,
+          success: function(returnData) {
+            const obj = JSON.parse(returnData);
+      setLocalStorage("jwt", obj.token);
+            setLocalStorage("username", $("#username").val());
+            console.log("Get JWT from cookie" +  getLocalStorage("jwt"));
+            window.location.replace("/index.html");
+          },
+          error: function(xhr, ajaxOptions, thrownError){
+            console.log(thrownError);
+          }
+        });
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand mr-0" href="/index.html">
+          <img src="static/imgs/tplanet_logo_s.jpg" width="45" class="d-inline-block align-top" alt="">
+        </a>
+        <a class="nav-link px-0 d-md-none" href="/tplanet_signup.html">
+          <img src="static/imgs/registration_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+        </a>
+        <a class="nav-link text-dark px-0 d-md-none" href="/tplanet_signup.html">
+          註冊
+        </a>
+        <a class="btn btn-primary btn-sm d-md-none" href="/tplanet_signin.html">登入</a>        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/index.html">關於 T-planet</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/project_list.html">永續企業</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/project_list_local.html">地方團隊</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/kpi.html">永續專案</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/solution.html">解決方案</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/news_list.html">最新消息</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact_us.html">聯繫我們</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mr-2 d-flex align-items-center">
+            <li class="nav-item d-none d-md-block">
+              <a class="nav-link" href="/ab_plan_info.html">
+                <img src="static/imgs/registration_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+              </a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a class="nav-link text-dark" href="/tplanet_signup.html">
+                  註冊
+              </a>
+            </li>
+          </ul>
+          <a class="btn btn-primary my-2 my-sm-0 d-none d-md-block" href="/tplanet_signin.html">登入</a>
+        </div>
+      </div>
+    </nav>
+    <!-- content -->
+    <div class="container-fluid">
+      <form>
+        <div class="row justify-content-center">
+          <div class="col-10 col-md-5 bg-light rounded-lg py-3">
+              <div class="form-group">
+                <input type="email" class="form-control form-control-sm" id="email" aria-describedby="emailHelp" placeholder="電子郵件">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="username" placeholder="使用者名稱">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control form-control-sm" id="password"  placeholder="密碼">
+              </div>
+              <div class="form-group mb-0">
+                <input type="password" class="form-control form-control-sm" id="cfm_password" placeholder="確認密碼">
+		<!-- <small class="fz-xs text-danger">密碼不得少於 8 字元</small> -->
+		<small id="war_msg" class="fz-xs text-danger"></small>
+              </div>
+          </div>
+        </div>
+        <div class=" d-flex justify-content-center mt-3">
+          <div id="captcha">
+            <!-- <img class="d-none d-md-block" src="https://fakeimg.pl/526x60/?text=安全驗證&font=noto">
+	    <img class="d-md-none" src="https://fakeimg.pl/312x60/?text=安全驗證&font=noto"> -->
+          </div>
+        </div>
+        <div class="text-center mt-4">
+	  <button type="button" class="btn btn-success" onclick="onSubmit()" >註冊</button>
+        </div>
+      </form>
+      </div>
+    </div>
+        <!-- footer -->
+        <footer class="bg-gray mt-5">
+          <div class="container">
+            <div class="row py-4 border-bottom border-secondary">
+              <div class="col-md-8 d-none d-md-block">
+                <div class="h-100 d-flex align-items-center justify-content-center justify-content-md-start mt-2 mt-md-0">
+                  <p class="mr-4 mb-0"><a href="/index.html" class="text-dark">關於T-planet</a></p>
+                  <p class="mr-4 mb-0"><a href="/kpi.html" class="text-dark">永續專案</a></p>
+                  <p class="mr-4 mb-0"><a href="/solution.html" class="text-dark">解決方案</a></p>
+                  <p class="mr-4 mb-0"><a href="/contact_us.html" class="text-dark">聯繫我們</a></p>
+                  <p class="mr-4 mb-0"><a href="/message_list.html" class="text-dark">最新消息</a></p>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-0">
+                <div class="d-flex h-100 align-items-center justify-content-center justify-content-md-end">
+                  <div>
+                    <a class="navbar-brand mx-auto" href="https://www.facebook.com/townway104" target="_blank">
+                      <img class="mr-3" src="static/imgs/fbLogo.svg" alt="" style="height: 30px;">
+                    </a>
+                    <a class="navbar-brand mx-auto" href="https://www.linkedin.com/company/townintelligent" target="_blank">
+                      <img class="mr-3" src="static/imgs/linkedinLogo.svg" alt="" style="height: 30px;">
+                    </a>
+                    <a class="navbar-brand mx-auto" href="https://www.instagram.com/townway104" target="_blank">
+                      <img class="mr-3" src="static/imgs/igLogo.svg" alt="" style="height: 30px;">
+                    </a>
+                    <a class="navbar-brand mx-auto" href="https://www.youtube.com/user/forus999" target="_blank">
+                      <img src="static/imgs/youtubeLogo.svg" alt="" style="height: 30px;">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- mobile -->
+              <div class="col-6 d-md-none">
+                <p class="text-center"><a href="/index.html" class="text-dark">關於T-planet</a></p>
+              </div>
+              <div class="col-6 d-md-none">
+                <p class="text-center"><a href="/kpi.html" class="text-dark">永續專案</a></p>
+              </div>
+              <div class="col-6 d-md-none">
+                <p class="text-center"><a href="/solution.html" class="text-dark">解決方案</a></p>
+              </div>
+              <div class="col-6 d-md-none">
+                <p class="text-center"><a href="/contact_us.html" class="text-dark">聯繫我們</a></p>
+              </div>
+              <div class="col-6 d-md-none">
+                <p class="text-center"><a href="/message_list.html" class="text-dark">最新消息</a></p>
+              </div>
+            </div>
+            
+            <div class="row py-4">
+              <!-- mobile -->
+              <div class="col-md-6 pl-md-0 d-md-none px-0">
+                <div class="h-100 d-flex align-items-center justify-content-center mb-4 mb-md-0">
+                  <div class="mr-4">
+                    <img src="static/imgs/townwayLogo.svg" alt="" style="width:70px">
+                  </div>
+                  <div class="mr-4">
+                    <img src="static/imgs/townEmpowermentLogo.svg" alt="" style="width:70px">
+                  </div>
+                  <div class="mr-4">
+                    <img src="static/imgs/townIntelligentLogo.svg" alt="" style="width:70px">
+                  </div>
+                  <div>
+                    <img src="static/imgs/townTerroirLogo.svg" alt="" style="width:70px">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 pr-md-0">
+                <div class="d-md-flex h-100 align-items-center justify-content-center justify-content-md-start">
+                  <p class="mb-0 text-center text-md-left">Copyright &copy; 2022 T-planet</p>
+                </div>
+              </div>
+              <div class="col-md-6 d-none d-md-block">
+                <div class="h-100 d-flex align-items-center justify-content-md-center mt-2 mt-md-0">
+                  <div class="mr-4">
+                    <img src="static/imgs/townwayLogo.svg" alt="" style="width:100px">
+                  </div>
+                  <div class="mr-4">
+                    <img src="static/imgs/townEmpowermentLogo.svg" alt="" style="width:100px">
+                  </div>
+                  <div class="mr-4">
+                    <img src="static/imgs/townIntelligentLogo.svg" alt="" style="width:100px">
+                  </div>
+                  <div>
+                    <img src="static/imgs/townTerroirLogo.svg" alt="" style="width:100px">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="d-md-flex h-100 align-items-center justify-content-center justify-content-md-end">
+                  <p class="mb-0 text-center text-md-right"><a href="#" class="text-dark">隱私權條款</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+  </body>

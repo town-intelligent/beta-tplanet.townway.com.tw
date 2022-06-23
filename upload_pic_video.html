@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css" >
+    <link rel="stylesheet" href="static/css/progress_bar.css">
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="/index.html">
+          <img src="static/imgs/tplanet_logo_s.jpg" width="45" class="d-inline-block align-top" alt="">
+        </a>
+        <a class="nav-link d-md-none" href="/ab_plan_info.html">
+          <img src="static/imgs/registration_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+        </a>
+        <a class="nav-link d-md-none" href="/message_list.html">
+          <img src="static/imgs/notifications_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+        </a>
+        <a class="nav-link d-md-none" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+          <img src="static/imgs/manage_accounts_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+        </a>
+        <div class="dropdown-menu dropdown-menu-center">
+          <a class="dropdown-item d-flex align-items-center" href="/ab_cms_personal_file.html">
+            <img src="static/imgs/personal_info.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+            <span class="pl-2">基本資料</span>
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="/ab_my_project.html">
+            <img src="static/imgs/registration_icon.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+            <span class="pl-2">我的提案</span>
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="/cms_ab.html">
+            <img src="static/imgs/cooperate.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+            <span class="pl-2">永續專案</span>
+          </a>
+          <!-- <a class="dropdown-item d-flex align-items-center" href="/ab_cms_personal_file.html">
+            <img src="static/imgs/personal_info.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+            <span class="pl-2">基本資料</span>
+          </a> -->
+          <a class="dropdown-item d-flex align-items-center" href="/message_list.html">
+            <img src="static/imgs/message.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+            <span class="pl-2">訊息管理</span>
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="#">
+            <img src="static/imgs/logout.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+            <span class="pl-2">登出</span>
+          </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/index.html">關於 T-planet</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/project_list.html">永續企業</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/project_list_local.html">地方團隊</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/kpi.html">永續專案</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/solution.html">解決方案</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/news_list.html">最新消息</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact_us.html">聯繫我們</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mr-2">
+            <li class="nav-item d-none d-md-block">
+              <a class="nav-link" href="/ab_plan_info.html">
+                <img src="static/imgs/registration_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+              </a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a class="nav-link" href="/message_list.html">
+                <img src="static/imgs/notifications_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+              </a>
+            </li>
+            <li class="nav-item dropdown d-none d-md-block">
+              <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                <img src="static/imgs/manage_accounts_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item d-flex align-items-center" href="/ab_cms_personal_file.html">
+                  <img src="static/imgs/personal_info.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+                  <span class="pl-2">基本資料</span>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="/ab_my_project.html">
+                  <img src="static/imgs/registration_icon.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+                  <span class="pl-2">我的提案</span>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="/cms_ab.html">
+                  <img src="static/imgs/cooperate.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+                  <span class="pl-2">永續專案</span>
+                </a>
+                <!-- <a class="dropdown-item d-flex align-items-center" href="#">
+                  <img src="static/imgs/subscribe.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+                  <span class="pl-2">訂閱方案</span>
+                </a> -->
+                <a class="dropdown-item d-flex align-items-center" href="/message_list.html">
+                  <img src="static/imgs/message.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+                  <span class="pl-2">訊息管理</span>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <img src="static/imgs/logout.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+                  <span class="pl-2">登出</span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- content -->
+    <section>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-10">
+            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="upload-picture-tab" data-toggle="pill" href="#upload-picture" role="tab" aria-controls="upload-picture" aria-selected="true">圖片</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="upload-video-tab" data-toggle="pill" href="#upload-video" role="tab" aria-controls="upload-video" aria-selected="false">影片</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="upload-picture" role="tabpanel" aria-labelledby="upload-picture-tab">
+                <div class="border d-flex align-items-center justify-content-center" style="height: 300px;">
+                  <img src="static/imgs/Upload.png" width="80" height="80" alt="">
+                </div>
+              </div>
+              <div class="tab-pane fade" id="upload-video" role="tabpanel" aria-labelledby="upload-video-tab">
+                <div class="border d-flex align-items-center justify-content-center" style="height: 250px;">
+                  <p>
+                    請提供影片連結
+                  </p>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control rounded-0 mt-2" placeholder="請輸入影片網址">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </body>
+</html>
