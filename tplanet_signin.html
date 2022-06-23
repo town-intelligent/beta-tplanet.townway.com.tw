@@ -90,7 +90,7 @@
         dataJSON.password =  $("#password").val();
         e.preventDefault();
         $.ajax({
-          url: "https://eid-backend.townway.com.tw/accounts/signin",
+          url:  HOST_URL_EID_DAEMON + "/accounts/signin",
           type: "POST",
           crossDomain: true,
           data:  dataJSON,
