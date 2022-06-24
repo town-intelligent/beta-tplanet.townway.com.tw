@@ -100,7 +100,11 @@
             setLocalStorage("username", obj.username);
             setLocalStorage("email", $("#email").val());
             console.log("Get JWT from cookie" +  getLocalStorage("jwt"));
-            window.location.replace("/cms_ab.html");
+            
+            // TODO, redirect by group
+            group = get_group($("#email").val());
+	    alert(group);
+	    window.location.replace("/cms_ab.html");
           },
           error: function(xhr, ajaxOptions, thrownError){
 
