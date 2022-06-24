@@ -18,6 +18,7 @@
 
     <script src="static/js/config.js"></script>
     <script src="static/js/localStorage.js"></script>
+    <script src="static/js/accounts.js"></script>
 
    <script type="text/javascript">
       let CLIENT_ID = "1080674192413-b1vnqslm4gif3p9ntaj4ifl4i572p0bn.apps.googleusercontent.com";
@@ -103,8 +104,13 @@
             
             // TODO, redirect by group
             group = get_group($("#email").val());
-	    alert(group);
-	    window.location.replace("/cms_ab.html");
+	    if (group == "100") {
+              window.location.replace("/admin_dashboard.html");
+	    } else if (group == "200") {
+	      window.location.replace("/admin_agent_dashboard.html");
+	    } else {
+	      window.location.replace("/cms_ab.html");
+	    }
           },
           error: function(xhr, ajaxOptions, thrownError){
 

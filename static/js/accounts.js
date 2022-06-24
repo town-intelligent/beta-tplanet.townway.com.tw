@@ -16,9 +16,9 @@ function get_group(email) {
       console.log(thrownError);
     }
   });
+  
   return getLocalStorage("group");
 }
-
 
 function logout() {
   // Modify account
