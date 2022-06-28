@@ -13,12 +13,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="static/css/style.css" >
-    <link rel="stylesheet" href="static/css/progress_bar.css">
+    <link rel="stylesheet" href="/static/css/style.css" >
+    <link rel="stylesheet" href="/static/css/progress_bar.css">
 
-    <script src="static/js/config.js"></script>
-    <script src="static/js/localStorage.js"></script>
-    <script src="static/js/accounts.js"></script>
+    <script src="/static/js/config.js"></script>
+    <script src="/static/js/localStorage.js"></script>
+    <script src="/static/js/accounts.js"></script>
 
    <script type="text/javascript">
       let CLIENT_ID = "1080674192413-b1vnqslm4gif3p9ntaj4ifl4i572p0bn.apps.googleusercontent.com";
@@ -30,8 +30,8 @@
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
 
-    <script src="static/js/GoogleOAuth.js"></script>
-    <script src="static/js/FacebookOAuth.js"></script>
+    <script src="/static/js/GoogleOAuth.js"></script>
+    <script src="/static/js/FacebookOAuth.js"></script>
 
   <script>
   window.fbAsyncInit = function() {
@@ -105,11 +105,11 @@
             // TODO, redirect by group
             group = get_group($("#email").val());
 	    if (group == "100") {
-              window.location.replace("/admin_dashboard.html");
+        window.location.replace("/backend/admin_dashboard.html");
 	    } else if (group == "200") {
-	      window.location.replace("/admin_agent_dashboard.html");
+	      window.location.replace("/backend/admin_agent_dashboard.html");
 	    } else {
-	      window.location.replace("/cms_ab.html");
+	      window.location.replace("/backend/cms_ab.html");
 	    }
           },
           error: function(xhr, ajaxOptions, thrownError){
@@ -133,10 +133,10 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container">
         <a class="navbar-brand mr-0" href="/index.html">
-          <img src="static/imgs/tplanet_logo_s.jpg" width="45" class="d-inline-block align-top" alt="">
+          <img src="/static/imgs/tplanet_logo_s.jpg" width="45" class="d-inline-block align-top" alt="">
         </a>
         <a class="nav-link px-0 d-md-none" href="/tplanet_signup.html">
-          <img src="static/imgs/registration_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+          <img src="/static/imgs/registration_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
         </a>
         <a class="nav-link text-dark px-0 d-md-none" href="/tplanet_signup.html">
           註冊
@@ -171,8 +171,8 @@
           </ul>
           <ul class="navbar-nav mr-2 d-flex align-items-center">
             <li class="nav-item d-none d-md-block">
-              <a class="nav-link" href="/ab_plan_info.html">
-                <img src="static/imgs/registration_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+              <a class="nav-link" href="/backend/ab_plan_info.html">
+                <img src="/static/imgs/registration_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
               </a>
             </li>
             <li class="nav-item d-none d-md-block">
@@ -221,13 +221,13 @@
           <div class="row mt-3">
             <div class="col-md-6 pl-0 pr-0 pr-md-1">
               <a href="" class="btn btn-block btn-outline-secondary" id="btnFbSignIn">
-                <img class="mr-2" src="static/imgs/fb-logo-s.png" alt="">
+                <img class="mr-2" src="/static/imgs/fb-logo-s.png" alt="">
                 <small class="text-dark">透過 Facebook 登入</small>
               </a>
             </div>
             <div class="col-md-6 pr-0 pl-0 pl-md-1 mt-3 mt-md-0">
 		<a class="btn btn-block btn-outline-secondary" id="btnGoogleSignIn">
-                <img class="mr-2" src="static/imgs/google-logo-s.png" alt="">
+                <img class="mr-2" src="/static/imgs/google-logo-s.png" alt="">
                 <small class="text-dark">透過 Google 登入</small>
               </a>
             </div>
@@ -258,16 +258,16 @@
             <div class="d-flex h-100 align-items-center justify-content-center justify-content-md-end">
               <div>
                 <a class="navbar-brand mx-auto" href="https://www.facebook.com/townway104" target="_blank">
-                  <img class="mr-3" src="static/imgs/fbLogo.svg" alt="" style="height: 30px;">
+                  <img class="mr-3" src="/static/imgs/fbLogo.svg" alt="" style="height: 30px;">
                 </a>
                 <a class="navbar-brand mx-auto" href="https://www.linkedin.com/company/townintelligent" target="_blank">
-                  <img class="mr-3" src="static/imgs/linkedinLogo.svg" alt="" style="height: 30px;">
+                  <img class="mr-3" src="/static/imgs/linkedinLogo.svg" alt="" style="height: 30px;">
                 </a>
                 <a class="navbar-brand mx-auto" href="https://www.instagram.com/townway104" target="_blank">
-                  <img class="mr-3" src="static/imgs/igLogo.svg" alt="" style="height: 30px;">
+                  <img class="mr-3" src="/static/imgs/igLogo.svg" alt="" style="height: 30px;">
                 </a>
                 <a class="navbar-brand mx-auto" href="https://www.youtube.com/user/forus999" target="_blank">
-                  <img src="static/imgs/youtubeLogo.svg" alt="" style="height: 30px;">
+                  <img src="/static/imgs/youtubeLogo.svg" alt="" style="height: 30px;">
                 </a>
               </div>
             </div>
@@ -295,16 +295,16 @@
           <div class="col-md-6 pl-md-0 d-md-none px-0">
             <div class="h-100 d-flex align-items-center justify-content-center mb-4 mb-md-0">
               <div class="mr-4">
-                <img src="static/imgs/townwayLogo.svg" alt="" style="width:70px">
+                <img src="/static/imgs/townwayLogo.svg" alt="" style="width:70px">
               </div>
               <div class="mr-4">
-                <img src="static/imgs/townEmpowermentLogo.svg" alt="" style="width:70px">
+                <img src="/static/imgs/townEmpowermentLogo.svg" alt="" style="width:70px">
               </div>
               <div class="mr-4">
-                <img src="static/imgs/townIntelligentLogo.svg" alt="" style="width:70px">
+                <img src="/static/imgs/townIntelligentLogo.svg" alt="" style="width:70px">
               </div>
               <div>
-                <img src="static/imgs/townTerroirLogo.svg" alt="" style="width:70px">
+                <img src="/static/imgs/townTerroirLogo.svg" alt="" style="width:70px">
               </div>
             </div>
           </div>
@@ -316,16 +316,16 @@
           <div class="col-md-6 d-none d-md-block">
             <div class="h-100 d-flex align-items-center justify-content-md-center mt-2 mt-md-0">
               <div class="mr-4">
-                <img src="static/imgs/townwayLogo.svg" alt="" style="width:100px">
+                <img src="/static/imgs/townwayLogo.svg" alt="" style="width:100px">
               </div>
               <div class="mr-4">
-                <img src="static/imgs/townEmpowermentLogo.svg" alt="" style="width:100px">
+                <img src="/static/imgs/townEmpowermentLogo.svg" alt="" style="width:100px">
               </div>
               <div class="mr-4">
-                <img src="static/imgs/townIntelligentLogo.svg" alt="" style="width:100px">
+                <img src="/static/imgs/townIntelligentLogo.svg" alt="" style="width:100px">
               </div>
               <div>
-                <img src="static/imgs/townTerroirLogo.svg" alt="" style="width:100px">
+                <img src="/static/imgs/townTerroirLogo.svg" alt="" style="width:100px">
               </div>
             </div>
           </div>

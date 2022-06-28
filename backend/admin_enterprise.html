@@ -18,6 +18,7 @@
     <script src="/static/js/config.js"></script>
     <script src="/static/js/localStorage.js"></script>
     <script src="/static/js/accounts.js"></script>
+    <script src="/static/js/permission.js"></script>
   </head>
 
   <body>
@@ -138,59 +139,54 @@
     </nav>
     <!-- content -->
     <section>
-      <div class="container-fluid px-0 mt-4">
-        <div class="bg-cover img-fluid w-100 pt-5" style="background-image: url(/static/imgs/banner-contact-us.png); height: 450px">
-          <p class="container text-primary-darker pt-5 h2 d-none d-md-block">聆聽您的聲音，了解您的需求</p>
-          <p class="container text-center text-primary-darker pt-5 h4 d-md-none">聆聽您的聲音，了解您的需求</p>
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-12">
+            <a href="#" class="btn btn-primary">回控制頁</a>
+            <p class="text-secondary mt-4">永續企業清單</p>
+          </div>
         </div>
-      </div>
-      <div class="container">
-        <form class="mt-5 mb-5">
-          <div class="row">
-            <div class="form-group col-md-6 mt-3 mt-md-0">
-              <label for="inputEvent1"><span>*</span>姓名</label>
-              <input type="text" class="form-control" id="inputEvent1" placeholder="">
-            </div>
-            <div class="form-group col-md-6 mt-3 mt-md-0">
-              <label for="inputEvent2"><span>*</span>電子郵件</label>
-              <input type="email" class="form-control" id="inputEvent2" placeholder="">
-            </div>
-            <div class="form-group col-md-6 mt-3 mt-md-0">
-              <label for="inputEvent3"><span>*</span>公司名稱</label>
-              <input type="text" class="form-control" id="inputEvent3" placeholder="">
-            </div>
-            <div class="form-group col-md-6 mt-3 mt-md-0">
-              <label for="inputEvent4"><span>*</span>官方網站</label>
-              <input type="text" class="form-control" id="inputEvent4" placeholder="">
-            </div>
-            <div class="form-group col-md-6 mt-3 mt-md-0">
-              <label for="inputEvent5"><span>*</span>聯絡電話</label>
-              <input type="tel" class="form-control" id="inputEvent5" placeholder="">
-            </div>
-            <div class="form-group col-md-6 mt-3 mt-md-0">
-              <label for="inputEvent6">關注議題</label>
-              <div class="d-flex flex-wrap">
-                <a class="d-block" href="#">
-                  <img class="mr-3" src="/static/imgs/SDGs_04.jpg" alt="" style="width:40px">
-                </a>
-                <a class="d-block" href="#">
-                  <img class="mr-3" src="/static/imgs/SDGs_06.jpg" alt="" style="width:40px">
-                </a>
-                <a class="d-block" href="#">
-                  <img class="mr-3" src="/static/imgs/SDGs_11.jpg" alt="" style="width:40px">
-                </a>
-                <button type="button" class="btn btn-outline-dark rounded-0 mt-md-0" style="height:40px; width:40px" data-toggle="modal" data-target="#staticBackdrop">+</button>
-              </div>
-            </div>
-            <div class="form-group col-12 mt-3 mt-md-0">
-              <label for="inputEvent7"><span>*</span>需求</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" style="resize : none" rows="10"></textarea>
-            </div>
-          </div>
-          <div class="text-center mt-4">
-            <button type="submit" class="btn btn-secondary">返回</button>
-          </div>
-        </form>
+        <div class="table-responsive mt-2">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col" class="text-center table-width-s">項次</th>
+                <th scope="col" class="text-center table-width-m">公司名稱</th>
+                <th scope="col" class="text-center table-width-m">提案名稱</th>
+                <th scope="col" class="text-center table-width-m">提案時間</th>
+                <th scope="col" class="text-center table-width-m">計畫金額</th>
+                <th scope="col" class="text-center table-width-l">計畫期間</th>
+                <th scope="col" class="text-center table-width-l">SDGs指標</th>
+                <th scope="col" class="text-center table-width-m">預期關係人口數</th>
+                <th scope="col" class="text-center table-width-l">LOCATION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="align-middle text-center">1</td>
+                <td class="align-middle text-center">新科技公司</td>
+                <td class="align-middle text-center">永續發展提案</td>
+                <td class="align-middle text-center">2022.04.29</td>
+                <td class="align-middle text-center">1,200,000</td>
+                <td class="align-middle text-center">2022.06.30-2022.09.30</td>
+                <td class="align-middle text-center">SDGs01、SDGs03、SDGs11</td>
+                <td class="align-middle text-center">50,000</td>
+                <td class="align-middle text-center">T-Planet @ Zhushan</td>
+              </tr>
+              <tr>
+                <td class="align-middle text-center">2</td>
+                <td class="align-middle text-center">新科技公司</td>
+                <td class="align-middle text-center">永續發展提案</td>
+                <td class="align-middle text-center">2022.04.29</td>
+                <td class="align-middle text-center">1,200,000</td>
+                <td class="align-middle text-center">2022.06.30-2022.09.30</td>
+                <td class="align-middle text-center">SDGs01、SDGs03、SDGs11</td>
+                <td class="align-middle text-center">50,000</td>
+                <td class="align-middle text-center">T-Planet @ Zhushan</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
     <!-- footer -->
@@ -204,7 +200,6 @@
               <p class="mr-4 mb-0"><a href="/solution.html" class="text-dark">解決方案</a></p>
               <p class="mr-4 mb-0"><a href="/contact_us.html" class="text-dark">聯繫我們</a></p>
               <p class="mr-4 mb-0"><a href="/backend/message_list.html" class="text-dark">最新消息</a></p>
-
             </div>
           </div>
           <div class="col-md-4 mb-4 mb-md-0">
@@ -236,12 +231,11 @@
             <p class="text-center"><a href="/solution.html" class="text-dark">解決方案</a></p>
           </div>
           <div class="col-6 d-md-none">
-            <p class="text-center"><a href="/contact_us.html" class="text-dark">聯繫我們</a></p>
+            <p class="text-center"><a href="/contact_us.html"" class="text-dark">聯繫我們</a></p>
           </div>
           <div class="col-6 d-md-none">
             <p class="text-center"><a href="/backend/message_list.html" class="text-dark">最新消息</a></p>
           </div>
-
         </div>
         
         <div class="row py-4">

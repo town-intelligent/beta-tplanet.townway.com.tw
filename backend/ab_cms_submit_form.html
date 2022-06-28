@@ -7,17 +7,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="/static/css/style.css" >
+    <link rel="stylesheet" href="/static/css/progress_bar.css">
     <script src="/static/js/config.js"></script>
     <script src="/static/js/localStorage.js"></script>
     <script src="/static/js/accounts.js"></script>
+    <script src="/static/js/permission.js"></script>
   </head>
 
   <body>
@@ -138,61 +138,189 @@
     </nav>
     <!-- content -->
     <section>
-      <div class="container-fluid px-0 mt-4">
-        <div class="bg-cover img-fluid w-100 pt-5" style="background-image: url(/static/imgs/banner-contact-us.png); height: 450px">
-          <p class="container text-primary-darker pt-5 h2 d-none d-md-block">聆聽您的聲音，了解您的需求</p>
-          <p class="container text-center text-primary-darker pt-5 h4 d-md-none">聆聽您的聲音，了解您的需求</p>
-        </div>
-      </div>
       <div class="container">
-        <form class="mt-5 mb-5">
-          <div class="row">
-            <div class="form-group col-md-6 mt-3 mt-md-0">
-              <label for="inputEvent1"><span>*</span>姓名</label>
-              <input type="text" class="form-control" id="inputEvent1" placeholder="">
+        <div class="row mt-3 mt-md-5 justify-content-center">
+          <div class="col-10">
+            <div class="d-flex justify-content-end">
+              <button type="button" class="btn btn-white" data-toggle="modal" data-target="#staticBackdrop">
+                <img style="width: 45px" src="/static/imgs/forward_to_inbox.svg" alt="">
+              </button>
             </div>
-            <div class="form-group col-md-6 mt-3 mt-md-0">
-              <label for="inputEvent2"><span>*</span>電子郵件</label>
-              <input type="email" class="form-control" id="inputEvent2" placeholder="">
+          </div>
+          <div class="col-10 mt-3">
+            <div class="d-flex justify-content-center">
+              <img class="img-fluid" src="/static/imgs/project_img_03.png" alt="">
             </div>
-            <div class="form-group col-md-6 mt-3 mt-md-0">
-              <label for="inputEvent3"><span>*</span>公司名稱</label>
-              <input type="text" class="form-control" id="inputEvent3" placeholder="">
-            </div>
-            <div class="form-group col-md-6 mt-3 mt-md-0">
-              <label for="inputEvent4"><span>*</span>官方網站</label>
-              <input type="text" class="form-control" id="inputEvent4" placeholder="">
-            </div>
-            <div class="form-group col-md-6 mt-3 mt-md-0">
-              <label for="inputEvent5"><span>*</span>聯絡電話</label>
-              <input type="tel" class="form-control" id="inputEvent5" placeholder="">
-            </div>
-            <div class="form-group col-md-6 mt-3 mt-md-0">
-              <label for="inputEvent6">關注議題</label>
-              <div class="d-flex flex-wrap">
-                <a class="d-block" href="#">
-                  <img class="mr-3" src="/static/imgs/SDGs_04.jpg" alt="" style="width:40px">
-                </a>
-                <a class="d-block" href="#">
-                  <img class="mr-3" src="/static/imgs/SDGs_06.jpg" alt="" style="width:40px">
-                </a>
-                <a class="d-block" href="#">
-                  <img class="mr-3" src="/static/imgs/SDGs_11.jpg" alt="" style="width:40px">
-                </a>
-                <button type="button" class="btn btn-outline-dark rounded-0 mt-md-0" style="height:40px; width:40px" data-toggle="modal" data-target="#staticBackdrop">+</button>
+          </div>
+        </div>
+        <!-- project description -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <p class="h4 text-primary">竹山創生輔導合作計畫</p>
+          </div>
+          <div class="col-md-6 mt-4">
+            <div class="d-flex flex-column h-100 justify-content-start">
+              <div class="row">
+                <div class="col-2 col-md-1 pr-0">
+                  <a href="#">
+                    <img class="w-100" src="/static/imgs/SDGs_04.jpg" alt="">
+                  </a>
+                </div>
+                <div class="col-2 col-md-1 pr-0">
+                  <a href="#">
+                    <img class="w-100" src="/static/imgs/SDGs_08.jpg" alt="">
+                  </a>
+                </div>
+                <div class="col-2 col-md-1 pr-0">
+                  <a href="#">
+                    <img class="w-100" src="/static/imgs/SDGs_11.jpg" alt="">
+                  </a>
+                </div>
+                <div class="col-2 col-md-1 pr-0">
+                  <a href="#">
+                    <img class="w-100" src="/static/imgs/SDGs_15.jpg" alt="">
+                  </a>
+                </div>
+                <div class="col-2 col-md-1 pr-0">
+                  <a href="#">
+                    <img class="w-100" src="/static/imgs/SDGs_17.jpg" alt="">
+                  </a>
+                </div>
+              </div>
+              <div class="d-none d-md-block">
+                <p class="mt-3 mb-3">計畫編號:</p>
+                <p class="mb-3">計畫金額:</p>
+                <p class="mb-3">預期關係人口數:</p>
+                <p><img class="mr-2" src="/static/imgs/place_marker.svg" alt="" style="width:20px">T-Planet @ Zhushan</p>
               </div>
             </div>
-            <div class="form-group col-12 mt-3 mt-md-0">
-              <label for="inputEvent7"><span>*</span>需求</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" style="resize : none" rows="10"></textarea>
+          </div>
+          <div class="col-md-6 mt-md-4">
+            <div class="d-flex flex-column">
+              <p class="mt-3 mt-md-0 mb-3">提案方:<span class="pl-2">永鑫能源</span></p>
+              <p class="mb-3">專案負責人:<span class="pl-2">蔡筑茵</span></p>
+              <p class="mb-3">計畫期間:<span class="pl-2">2020 年 8 月 1 日 - 2021 年 7 月 31 日</span></p>
+              <p class="mb-3">電子郵件:<span class="pl-2">philaeld@gmail.com </span></p>
+              <p class="mb-3">公司網站:<span class="pl-2">https://www.townway.com.tw/</span></p>
+              <div class="d-md-none">
+                <p class="mb-3">計畫編號:</p>
+                <p class="mb-3">計畫金額:</p>
+                <p class="mb-3">預期關係人口數:</p>
+                <p><img class="mr-2" src="/static/imgs/place_marker.svg" alt="" style="width:20px">T-Planet @ Zhushan</p>
+              </div>
             </div>
           </div>
-          <div class="text-center mt-4">
-            <button type="submit" class="btn btn-secondary">返回</button>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12">
+            <p class="h5">計畫理念:</p>
+            <p class="mt-3 mb-2">「小鎮文創」、「小鎮智能」以及「小鎮風土」三家公司都將進駐於此，未來將透過亞洲合作、資源整合、經驗培育、數位科技專業領域，進行從台灣的北、中、南、東與離島五分區的跨區域數位匯流骨幹的協力機制。
+            </p>
+            <p class="mb-2">
+              我們將以「關係人口」、「聯合國SDGs」、「企業CSR」進行由下而上的民間支持系統，創造更積極民間協力創生動能!未來也將此數位技術延伸到中國大陸、馬來西亞與日本!我們正在建構打破距離區域、城市鄉村、國內海外的遠端框架侷限!大家努力為台灣社會尋求疫情過後，更能夠活躍的亞洲創生國際舞台。</p>
+            <p class="mb-2">無論如何，我們都要努力的讓疫情衝擊的這兩年，不再只是困境，而是轉型升級的千載難逢的契機!</p>
           </div>
-        </form>
+        </div>
+        <div class="form-group row justify-content-center mt-3">
+          <div class="col-12">
+            <div class="row align-items-center">
+              <img class="col-3 col-md-1" src="/static/imgs/SDGs_04.jpg" alt="">
+              <p class="col-9 col-md-11 col-form-label pr-md-0">支持，SDG 4 良質教育，你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容</p>
+            </div>
+            <div class="row align-items-center mt-4">
+              <img class="col-3 col-md-1" src="/static/imgs/SDGs_08.jpg" alt="">
+              <p class="col-9 col-md-11 col-form-label pr-md-0">支持，SDG 8 合適的工作與經濟成長，你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容</p>
+            </div>
+            <div class="row align-items-center mt-4">
+              <img class="col-3 col-md-1" src="/static/imgs/SDGs_11.jpg" alt="">
+              <p class="col-9 col-md-11 col-form-label pr-md-0">支持，SDG 11 永續城鄉，你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容</p>
+            </div>
+            <div class="row align-items-center mt-4">
+              <img class="col-3 col-md-1" src="/static/imgs/SDGs_15.jpg" alt="">
+              <p class="col-9 col-md-11 col-form-label pr-md-0">支持，SDG 15 陸地生態保育，你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容</p>
+            </div>
+            <div class="row align-items-center mt-4">
+              <img class="col-3 col-md-1" src="/static/imgs/SDGs_17.jpg" alt="">
+              <p class="col-9 col-md-11 col-form-label pr-md-0">支持，SDG 17 永續發展與全球夥伴關係，你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容</p>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12">
+            <p class="h5">成果展現:</p>
+          </div>
+          <div class="col-6 col-md-4">
+            <img class="img-fluid" src="/static/imgs/product.jpg" alt="">
+          </div>
+          <div class="col-4 text-center d-none d-md-block">
+            <img src="/static/imgs/qr_code.png" style="height: 188px;" alt="">
+          </div>
+          <div class="col-6 text-center d-md-none">
+            <img src="/static/imgs/qr_code.png" style="height: 102px;" alt="">
+          </div>
+          <div class="col-md-4 mt-4 mt-md-0">
+            <p>活動設計名稱: <span>減塑產品設計</span></p>
+            <p>日期: <span>2022.02.25</span></p>
+            <p class="small">設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念</p>
+          </div>
+        </div>
+        <div class="row mt-4 mt-md-5">
+          <div class="col-6 col-md-4">
+            <img class="img-fluid" src="/static/imgs/product.jpg" alt="">
+          </div>
+          <div class="col-4 text-center d-none d-md-block">
+            <img src="/static/imgs/qr_code.png" style="height: 188px;" alt="">
+          </div>
+          <div class="col-6 text-center d-md-none">
+            <img src="/static/imgs/qr_code.png" style="height: 102px;" alt="">
+          </div>
+          <div class="col-md-4 mt-4 mt-md-0">
+            <p>活動設計名稱: <span>減塑產品設計</span></p>
+            <p>日期: <span>2022.02.25</span></p>
+            <p class="small">設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念</p>
+          </div>
+        </div>
+        
+        <div class="row my-5 align-items-center justify-content-center">
+          <div class="col-12">
+            <p class="h5">參與方式:</p>
+          </div>
+          <div class="col-md-10">
+            <img class="img-fluid" src="/static/imgs/how_to_participate.png" alt="">
+          </div>
+          <div class="col-5 col-md-2 mt-4 mt-md-0">
+            <img class="img-fluid" src="/static/imgs/eid_qr_code.png" alt="">
+          </div>
+        </div>
       </div>
     </section>
+    <!-- modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">傳送郵件</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>寄件者： 
+              <span>townintelligent@gmail.com</span>
+            </p>
+            <p>收件者： 
+              <span>philaeld@gmail.com</span>
+            </p>
+            <p>主旨： 
+              <span>竹山創生輔導合作計畫 邀請</span>
+            </p>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="btn btn-primary">寄送</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- footer -->
     <footer class="bg-gray">
       <div class="container">
@@ -203,8 +331,7 @@
               <p class="mr-4 mb-0"><a href="/kpi.html" class="text-dark">永續專案</a></p>
               <p class="mr-4 mb-0"><a href="/solution.html" class="text-dark">解決方案</a></p>
               <p class="mr-4 mb-0"><a href="/contact_us.html" class="text-dark">聯繫我們</a></p>
-              <p class="mr-4 mb-0"><a href="/backend/message_list.html" class="text-dark">最新消息</a></p>
-
+              <p class="mr-4 mb-0"><a href="/news_list.html" class="text-dark">最新消息</a></p>
             </div>
           </div>
           <div class="col-md-4 mb-4 mb-md-0">
@@ -239,9 +366,8 @@
             <p class="text-center"><a href="/contact_us.html" class="text-dark">聯繫我們</a></p>
           </div>
           <div class="col-6 d-md-none">
-            <p class="text-center"><a href="/backend/message_list.html" class="text-dark">最新消息</a></p>
+            <p class="text-center"><a href="/news_list.html" class="text-dark">最新消息</a></p>
           </div>
-
         </div>
         
         <div class="row py-4">

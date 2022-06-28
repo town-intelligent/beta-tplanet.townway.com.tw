@@ -7,16 +7,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="static/css/style.css" >
-    <link rel="stylesheet" href="static/css/progress_bar.css">
+    <link rel="stylesheet" href="/static/css/style.css" >
+    <link rel="stylesheet" href="/static/css/progress_bar.css">
     <script src="/static/js/config.js"></script>
     <script src="/static/js/localStorage.js"></script>
     <script src="/static/js/accounts.js"></script>
+    <script src="/static/js/permission.js"></script>
   </head>
 
   <body>
@@ -24,40 +27,40 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container">
         <a class="navbar-brand" href="/index.html">
-          <img src="static/imgs/tplanet_logo_s.jpg" width="45" class="d-inline-block align-top" alt="">
+          <img src="/static/imgs/tplanet_logo_s.jpg" width="45" class="d-inline-block align-top" alt="">
         </a>
-        <a class="nav-link d-md-none" href="/ab_plan_info.html">
-          <img src="static/imgs/registration_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+        <a class="nav-link d-md-none" href="/backend/ab_plan_info.html">
+          <img src="/static/imgs/registration_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
         </a>
-        <a class="nav-link d-md-none" href="/message_list.html">
-          <img src="static/imgs/notifications_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+        <a class="nav-link d-md-none" href="/backend/message_list.html">
+          <img src="/static/imgs/notifications_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
         </a>
         <a class="nav-link d-md-none" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-          <img src="static/imgs/manage_accounts_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+          <img src="/static/imgs/manage_accounts_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
         </a>
         <div class="dropdown-menu dropdown-menu-center">
-          <a class="dropdown-item d-flex align-items-center" href="/ab_cms_personal_file.html">
-            <img src="static/imgs/personal_info.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+          <a class="dropdown-item d-flex align-items-center" href="/backend/ab_cms_personal_file.html">
+            <img src="/static/imgs/personal_info.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
             <span class="pl-2">基本資料</span>
           </a>
-          <a class="dropdown-item d-flex align-items-center" href="/ab_my_project.html">
-            <img src="static/imgs/registration_icon.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+          <a class="dropdown-item d-flex align-items-center" href="/backend/ab_my_project.html">
+            <img src="/static/imgs/registration_icon.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
             <span class="pl-2">我的提案</span>
           </a>
-          <a class="dropdown-item d-flex align-items-center" href="/cms_ab.html">
-            <img src="static/imgs/cooperate.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+          <a class="dropdown-item d-flex align-items-center" href="/backend/cms_ab.html">
+            <img src="/static/imgs/cooperate.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
             <span class="pl-2">永續專案</span>
           </a>
-          <!-- <a class="dropdown-item d-flex align-items-center" href="/ab_cms_personal_file.html">
-            <img src="static/imgs/personal_info.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+          <!-- <a class="dropdown-item d-flex align-items-center" href="/backend/ab_cms_personal_file.html">
+            <img src="/static/imgs/personal_info.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
             <span class="pl-2">基本資料</span>
           </a> -->
-          <a class="dropdown-item d-flex align-items-center" href="/message_list.html">
-            <img src="static/imgs/message.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+          <a class="dropdown-item d-flex align-items-center" href="/backend/message_list.html">
+            <img src="/static/imgs/message.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
             <span class="pl-2">訊息管理</span>
           </a>
           <a class="dropdown-item d-flex align-items-center" href="javascript:void(0)" onclick="logout()">
-            <img src="static/imgs/logout.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+            <img src="/static/imgs/logout.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
             <span class="pl-2">登出</span>
           </a>
         </div>
@@ -91,42 +94,42 @@
           </ul>
           <ul class="navbar-nav mr-2">
             <li class="nav-item d-none d-md-block">
-              <a class="nav-link" href="/ab_plan_info.html">
-                <img src="static/imgs/registration_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+              <a class="nav-link" href="/backend/ab_plan_info.html">
+                <img src="/static/imgs/registration_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
               </a>
             </li>
             <li class="nav-item d-none d-md-block">
-              <a class="nav-link" href="/message_list.html">
-                <img src="static/imgs/notifications_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+              <a class="nav-link" href="/backend/message_list.html">
+                <img src="/static/imgs/notifications_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
               </a>
             </li>
             <li class="nav-item dropdown d-none d-md-block">
               <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                <img src="static/imgs/manage_accounts_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
+                <img src="/static/imgs/manage_accounts_icon.svg" width="35" height="35" class="d-inline-block align-middle" alt="">
               </a>
               <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item d-flex align-items-center" href="/ab_cms_personal_file.html">
-                  <img src="static/imgs/personal_info.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+                <a class="dropdown-item d-flex align-items-center" href="/backend/ab_cms_personal_file.html">
+                  <img src="/static/imgs/personal_info.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
                   <span class="pl-2">基本資料</span>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="/ab_my_project.html">
-                  <img src="static/imgs/registration_icon.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+                <a class="dropdown-item d-flex align-items-center" href="/backend/ab_my_project.html">
+                  <img src="/static/imgs/registration_icon.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
                   <span class="pl-2">我的提案</span>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="/cms_ab.html">
-                  <img src="static/imgs/cooperate.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+                <a class="dropdown-item d-flex align-items-center" href="/backend/cms_ab.html">
+                  <img src="/static/imgs/cooperate.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
                   <span class="pl-2">永續專案</span>
                 </a>
                 <!-- <a class="dropdown-item d-flex align-items-center" href="#">
-                  <img src="static/imgs/subscribe.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+                  <img src="/static/imgs/subscribe.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
                   <span class="pl-2">訂閱方案</span>
                 </a> -->
-                <a class="dropdown-item d-flex align-items-center" href="/message_list.html">
-                  <img src="static/imgs/message.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+                <a class="dropdown-item d-flex align-items-center" href="/backend/message_list.html">
+                  <img src="/static/imgs/message.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
                   <span class="pl-2">訊息管理</span>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="javascript:void(0)" onclick="logout()">
-                  <img src="static/imgs/logout.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
+                  <img src="/static/imgs/logout.svg" alt="" width="30" height="30" class="d-inline-block align-middle">
                   <span class="pl-2">登出</span>
                 </a>
               </div>
@@ -139,16 +142,9 @@
     <section>
       <div class="container">
         <div class="row mt-3 mt-md-5 justify-content-center">
-          <div class="col-10">
-            <div class="d-flex justify-content-end">
-              <button type="button" class="btn btn-white" data-toggle="modal" data-target="#staticBackdrop">
-                <img style="width: 45px" src="static/imgs/forward_to_inbox.svg" alt="">
-              </button>
-            </div>
-          </div>
           <div class="col-10 mt-3">
             <div class="d-flex justify-content-center">
-              <img class="img-fluid" src="static/imgs/project_img_03.png" alt="">
+              <img class="img-fluid" src="/static/imgs/project_img_03.png" alt="">
             </div>
           </div>
         </div>
@@ -162,27 +158,27 @@
               <div class="row">
                 <div class="col-2 col-md-1 pr-0">
                   <a href="#">
-                    <img class="w-100" src="static/imgs/SDGs_04.jpg" alt="">
+                    <img class="w-100" src="/static/imgs/SDGs_04.jpg" alt="">
                   </a>
                 </div>
                 <div class="col-2 col-md-1 pr-0">
                   <a href="#">
-                    <img class="w-100" src="static/imgs/SDGs_08.jpg" alt="">
+                    <img class="w-100" src="/static/imgs/SDGs_08.jpg" alt="">
                   </a>
                 </div>
                 <div class="col-2 col-md-1 pr-0">
                   <a href="#">
-                    <img class="w-100" src="static/imgs/SDGs_11.jpg" alt="">
+                    <img class="w-100" src="/static/imgs/SDGs_11.jpg" alt="">
                   </a>
                 </div>
                 <div class="col-2 col-md-1 pr-0">
                   <a href="#">
-                    <img class="w-100" src="static/imgs/SDGs_15.jpg" alt="">
+                    <img class="w-100" src="/static/imgs/SDGs_15.jpg" alt="">
                   </a>
                 </div>
                 <div class="col-2 col-md-1 pr-0">
                   <a href="#">
-                    <img class="w-100" src="static/imgs/SDGs_17.jpg" alt="">
+                    <img class="w-100" src="/static/imgs/SDGs_17.jpg" alt="">
                   </a>
                 </div>
               </div>
@@ -190,7 +186,7 @@
                 <p class="mt-3 mb-3">計畫編號:</p>
                 <p class="mb-3">計畫金額:</p>
                 <p class="mb-3">預期關係人口數:</p>
-                <p><img class="mr-2" src="static/imgs/place_marker.svg" alt="" style="width:20px">T-Planet @ Zhushan</p>
+                <p><img class="mr-2" src="/static/imgs/place_marker.svg" alt="" style="width:20px">T-Planet @ Zhushan</p>
               </div>
             </div>
           </div>
@@ -205,121 +201,45 @@
                 <p class="mb-3">計畫編號:</p>
                 <p class="mb-3">計畫金額:</p>
                 <p class="mb-3">預期關係人口數:</p>
-                <p><img class="mr-2" src="static/imgs/place_marker.svg" alt="" style="width:20px">T-Planet @ Zhushan</p>
+                <p><img class="mr-2" src="/static/imgs/place_marker.svg" alt="" style="width:20px">T-Planet @ Zhushan</p>
               </div>
             </div>
           </div>
         </div>
         <div class="row mt-5">
           <div class="col-12">
-            <p class="h5">計畫理念:</p>
+            <p class="h5">公司理念:</p>
             <p class="mt-3 mb-2">「小鎮文創」、「小鎮智能」以及「小鎮風土」三家公司都將進駐於此，未來將透過亞洲合作、資源整合、經驗培育、數位科技專業領域，進行從台灣的北、中、南、東與離島五分區的跨區域數位匯流骨幹的協力機制。
             </p>
             <p class="mb-2">
               我們將以「關係人口」、「聯合國SDGs」、「企業CSR」進行由下而上的民間支持系統，創造更積極民間協力創生動能!未來也將此數位技術延伸到中國大陸、馬來西亞與日本!我們正在建構打破距離區域、城市鄉村、國內海外的遠端框架侷限!大家努力為台灣社會尋求疫情過後，更能夠活躍的亞洲創生國際舞台。</p>
             <p class="mb-2">無論如何，我們都要努力的讓疫情衝擊的這兩年，不再只是困境，而是轉型升級的千載難逢的契機!</p>
           </div>
-        </div>
-        <div class="form-group row justify-content-center mt-3">
-          <div class="col-12">
-            <div class="row align-items-center">
-              <img class="col-3 col-md-1" src="static/imgs/SDGs_04.jpg" alt="">
-              <p class="col-9 col-md-11 col-form-label pr-md-0">支持，SDG 4 良質教育，你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容</p>
-            </div>
-            <div class="row align-items-center mt-4">
-              <img class="col-3 col-md-1" src="static/imgs/SDGs_08.jpg" alt="">
-              <p class="col-9 col-md-11 col-form-label pr-md-0">支持，SDG 8 合適的工作與經濟成長，你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容</p>
-            </div>
-            <div class="row align-items-center mt-4">
-              <img class="col-3 col-md-1" src="static/imgs/SDGs_11.jpg" alt="">
-              <p class="col-9 col-md-11 col-form-label pr-md-0">支持，SDG 11 永續城鄉，你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容</p>
-            </div>
-            <div class="row align-items-center mt-4">
-              <img class="col-3 col-md-1" src="static/imgs/SDGs_15.jpg" alt="">
-              <p class="col-9 col-md-11 col-form-label pr-md-0">支持，SDG 15 陸地生態保育，你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容</p>
-            </div>
-            <div class="row align-items-center mt-4">
-              <img class="col-3 col-md-1" src="static/imgs/SDGs_17.jpg" alt="">
-              <p class="col-9 col-md-11 col-form-label pr-md-0">支持，SDG 17 永續發展與全球夥伴關係，你的評論內容你的評論內容你的評論內容你的評論內容你的評論內容</p>
+          <div class="col-12 mt-5">
+            <p class="h5">提案動機:</p>
+            <p class="mt-3 mb-2">「小鎮文創」、「小鎮智能」以及「小鎮風土」三家公司都將進駐於此，未來將透過亞洲合作、資源整合、經驗培育、數位科技專業領域，進行從台灣的北、中、南、東與離島五分區的跨區域數位匯流骨幹的協力機制。
+            </p>
+            <p class="mb-2">
+              我們將以「關係人口」、「聯合國SDGs」、「企業CSR」進行由下而上的民間支持系統，創造更積極民間協力創生動能!未來也將此數位技術延伸到中國大陸、馬來西亞與日本!我們正在建構打破距離區域、城市鄉村、國內海外的遠端框架侷限!大家努力為台灣社會尋求疫情過後，更能夠活躍的亞洲創生國際舞台。</p>
+            <p class="mb-2">無論如何，我們都要努力的讓疫情衝擊的這兩年，不再只是困境，而是轉型升級的千載難逢的契機!</p>
+            <div class="text-center">
+              <img class="w-75 w-md-50" src="/static/imgs/ab_cms_project_detail.png" alt="">
             </div>
           </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-12">
-            <p class="h5">成果展現:</p>
-          </div>
-          <div class="col-6 col-md-4">
-            <img class="img-fluid" src="static/imgs/product.jpg" alt="">
-          </div>
-          <div class="col-4 text-center d-none d-md-block">
-            <img src="static/imgs/qr_code.png" style="height: 188px;" alt="">
-          </div>
-          <div class="col-6 text-center d-md-none">
-            <img src="static/imgs/qr_code.png" style="height: 102px;" alt="">
-          </div>
-          <div class="col-md-4 mt-4 mt-md-0">
-            <p>活動設計名稱: <span>減塑產品設計</span></p>
-            <p>日期: <span>2022.02.25</span></p>
-            <p class="small">設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念</p>
-          </div>
-        </div>
-        <div class="row mt-4 mt-md-5">
-          <div class="col-6 col-md-4">
-            <img class="img-fluid" src="static/imgs/product.jpg" alt="">
-          </div>
-          <div class="col-4 text-center d-none d-md-block">
-            <img src="static/imgs/qr_code.png" style="height: 188px;" alt="">
-          </div>
-          <div class="col-6 text-center d-md-none">
-            <img src="static/imgs/qr_code.png" style="height: 102px;" alt="">
-          </div>
-          <div class="col-md-4 mt-4 mt-md-0">
-            <p>活動設計名稱: <span>減塑產品設計</span></p>
-            <p>日期: <span>2022.02.25</span></p>
-            <p class="small">設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念設計理念</p>
-          </div>
-        </div>
-        
-        <div class="row my-5 align-items-center justify-content-center">
-          <div class="col-12">
-            <p class="h5">參與方式:</p>
-          </div>
-          <div class="col-md-10">
-            <img class="img-fluid" src="static/imgs/how_to_participate.png" alt="">
-          </div>
-          <div class="col-5 col-md-2 mt-4 mt-md-0">
-            <img class="img-fluid" src="static/imgs/eid_qr_code.png" alt="">
+          <div class="col-12 my-5">
+            <p class="h5">專案規劃:</p>
+            <p class="mt-3 mb-2">「小鎮文創」、「小鎮智能」以及「小鎮風土」三家公司都將進駐於此，未來將透過亞洲合作、資源整合、經驗培育、數位科技專業領域，進行從台灣的北、中、南、東與離島五分區的跨區域數位匯流骨幹的協力機制。
+            </p>
+            <p class="mb-2">
+              我們將以「關係人口」、「聯合國SDGs」、「企業CSR」進行由下而上的民間支持系統，創造更積極民間協力創生動能!未來也將此數位技術延伸到中國大陸、馬來西亞與日本!我們正在建構打破距離區域、城市鄉村、國內海外的遠端框架侷限!大家努力為台灣社會尋求疫情過後，更能夠活躍的亞洲創生國際舞台。</p>
+            <p class="mb-2">無論如何，我們都要努力的讓疫情衝擊的這兩年，不再只是困境，而是轉型升級的千載難逢的契機!</p>
+            <div class="text-center">
+              <img class="w-75 w-md-50" src="/static/imgs/ab_cms_project_detail.png" alt="">
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- modal -->
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">傳送郵件</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>寄件者： 
-              <span>townintelligent@gmail.com</span>
-            </p>
-            <p>收件者： 
-              <span>philaeld@gmail.com</span>
-            </p>
-            <p>主旨： 
-              <span>竹山創生輔導合作計畫 邀請</span>
-            </p>
-          </div>
-          <div class="modal-footer d-flex justify-content-center">
-            <button type="button" class="btn btn-primary">寄送</button>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- footer -->
     <footer class="bg-gray">
       <div class="container">
@@ -337,16 +257,16 @@
             <div class="d-flex h-100 align-items-center justify-content-center justify-content-md-end">
               <div>
                 <a class="navbar-brand mx-auto" href="https://www.facebook.com/townway104" target="_blank">
-                  <img class="mr-3" src="static/imgs/fbLogo.svg" alt="" style="height: 30px;">
+                  <img class="mr-3" src="/static/imgs/fbLogo.svg" alt="" style="height: 30px;">
                 </a>
                 <a class="navbar-brand mx-auto" href="https://www.linkedin.com/company/townintelligent" target="_blank">
-                  <img class="mr-3" src="static/imgs/linkedinLogo.svg" alt="" style="height: 30px;">
+                  <img class="mr-3" src="/static/imgs/linkedinLogo.svg" alt="" style="height: 30px;">
                 </a>
                 <a class="navbar-brand mx-auto" href="https://www.instagram.com/townway104" target="_blank">
-                  <img class="mr-3" src="static/imgs/igLogo.svg" alt="" style="height: 30px;">
+                  <img class="mr-3" src="/static/imgs/igLogo.svg" alt="" style="height: 30px;">
                 </a>
                 <a class="navbar-brand mx-auto" href="https://www.youtube.com/user/forus999" target="_blank">
-                  <img src="static/imgs/youtubeLogo.svg" alt="" style="height: 30px;">
+                  <img src="/static/imgs/youtubeLogo.svg" alt="" style="height: 30px;">
                 </a>
               </div>
             </div>
@@ -374,16 +294,16 @@
           <div class="col-md-6 pl-md-0 d-md-none px-0">
             <div class="h-100 d-flex align-items-center justify-content-center mb-4 mb-md-0">
               <div class="mr-4">
-                <img src="static/imgs/townwayLogo.svg" alt="" style="width:70px">
+                <img src="/static/imgs/townwayLogo.svg" alt="" style="width:70px">
               </div>
               <div class="mr-4">
-                <img src="static/imgs/townEmpowermentLogo.svg" alt="" style="width:70px">
+                <img src="/static/imgs/townEmpowermentLogo.svg" alt="" style="width:70px">
               </div>
               <div class="mr-4">
-                <img src="static/imgs/townIntelligentLogo.svg" alt="" style="width:70px">
+                <img src="/static/imgs/townIntelligentLogo.svg" alt="" style="width:70px">
               </div>
               <div>
-                <img src="static/imgs/townTerroirLogo.svg" alt="" style="width:70px">
+                <img src="/static/imgs/townTerroirLogo.svg" alt="" style="width:70px">
               </div>
             </div>
           </div>
@@ -395,16 +315,16 @@
           <div class="col-md-6 d-none d-md-block">
             <div class="h-100 d-flex align-items-center justify-content-md-center mt-2 mt-md-0">
               <div class="mr-4">
-                <img src="static/imgs/townwayLogo.svg" alt="" style="width:100px">
+                <img src="/static/imgs/townwayLogo.svg" alt="" style="width:100px">
               </div>
               <div class="mr-4">
-                <img src="static/imgs/townEmpowermentLogo.svg" alt="" style="width:100px">
+                <img src="/static/imgs/townEmpowermentLogo.svg" alt="" style="width:100px">
               </div>
               <div class="mr-4">
-                <img src="static/imgs/townIntelligentLogo.svg" alt="" style="width:100px">
+                <img src="/static/imgs/townIntelligentLogo.svg" alt="" style="width:100px">
               </div>
               <div>
-                <img src="static/imgs/townTerroirLogo.svg" alt="" style="width:100px">
+                <img src="/static/imgs/townTerroirLogo.svg" alt="" style="width:100px">
               </div>
             </div>
           </div>
