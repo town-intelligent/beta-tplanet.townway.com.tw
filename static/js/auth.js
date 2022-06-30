@@ -32,9 +32,8 @@ function checkAuth() {
 
     if (page != "/tplanet_signin.html" || page != "/tplanet_signup.html") {
       console.log("Goto signin page");
-      window.location.replace("/tplanet_signin.html");
+      window.location.replace("/tplanet_signin.html?next=" + path);
     }
-
   } else {
     // Verify token
     console.log("Verifing JWT ...");

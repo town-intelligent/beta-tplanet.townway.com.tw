@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -85,7 +84,12 @@
 
     <script>
     $(function () {
-      $('form').on('submit', function(e){
+      $('form').on('submit', function(e) {
+
+        // TODO: Get path
+        var url = new URL(window.location.href);
+        var next = url.searchParams.get("next");
+
         var dataJSON = {};
         dataJSON.email =  $("#email").val();
         dataJSON.password =  $("#password").val();
@@ -101,15 +105,20 @@
             setLocalStorage("username", obj.username);
             setLocalStorage("email", $("#email").val());
             console.log("Get JWT from cookie" +  getLocalStorage("jwt"));
-            
-            // TODO, redirect by group
-            group = get_group($("#email").val());
-	    if (group == "100") {
-        window.location.replace("/backend/admin_dashboard.html");
-	    } else if (group == "200") {
-	      window.location.replace("/backend/admin_agent_dashboard.html");
+          
+	    // TODO, redirect by next
+            if (next != null) {
+	      window.location.replace(next);
 	    } else {
+              // TODO, redirect by group	  
+              group = get_group($("#email").val());
+    	      if (group == "100") {
+                window.location.replace("/backend/admin_dashboard.html");
+	      } else if (group == "200") {
+	      window.location.replace("/backend/admin_agent_dashboard.html");
+	      } else {
 	      window.location.replace("/backend/cms_ab.html");
+	      }
 	    }
           },
           error: function(xhr, ajaxOptions, thrownError){
