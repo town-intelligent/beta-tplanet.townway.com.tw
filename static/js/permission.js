@@ -1,3 +1,9 @@
+function login_required(path) {
+  if (path.includes("backend")) {
+      checkAuth();
+  }
+}
+
 function permission_check(page, group) {
   // Agent
   if (group == "200") {
@@ -21,6 +27,9 @@ function page_permission() {
 
   // Get group
   var group = getLocalStorage("group");
+
+  // Login required
+  login_required(path);
 
   // Permission check
   permission_check(page, group);
