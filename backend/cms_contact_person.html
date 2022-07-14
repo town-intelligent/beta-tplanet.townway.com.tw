@@ -17,6 +17,7 @@
     <script src="/static/js/config.js"></script>
     <script src="/static/js/localStorage.js"></script>
     <script src="/static/js/accounts.js"></script>
+    <script src="/static/js/cms_agent.js"></script>
   </head>
 
   <body>
@@ -144,10 +145,10 @@
         <li class="step2 text-center">
           <strong>SDGs 指標設定</strong>
         </li>
-        <li class="step3 text-center active">
+        <li class="step3 text-center">
           <strong>社會影響力展現</strong>
         </li>
-        <li class="step4 text-center">
+        <li class="step4 text-center active">
           <strong>專案聯繫窗口</strong>
         </li>
       </ul>
@@ -157,48 +158,80 @@
       <div class="container">
         <form action="">
           <div class="row mt-5 pt-3 align-items-center justify-content-center">
-            <div class="col-12">
-              <p class="bg-warning p-2">支持型表單形式</p>
+            <div class="col-10">
+              <div class="row">
+                <div class="col-md-6">
+                  <p class="bg-warning p-2">專案負責人</p>
+                  <input id="hoster" type="text" class="form-control" placeholder="請輸入負責人姓名">
+                </div>
+                <div class="col-md-6 mt-3 mt-md-0">
+                  <p class="bg-warning p-2">Email</p>
+                  <input id="email" type="email" class="form-control" placeholder="請輸入 Email">
+                </div>
+              </div>
             </div>
           </div>
-          <div class="form-group row justify-content-center">
-            <div class="col-md-10">
-              <div class="row align-items-center justify-content-center">
-                <img class="col-3 col-md-1" src="/static/imgs/SDGs_04.jpg" alt="">
-                <label class="col-3 col-md-1 col-form-label pr-0">支持，</label>
-                <div class="mt-3 mt-md-0 col-md-10 pl-md-0">
-                  <input type="text" class="form-control" placeholder="SDG 4 良質教育，請留下您的支持評論。">
+          <div class="row mt-3 mt-md-4 pt-md-3 align-items-center justify-content-center">
+            <div class="col-10">
+              <div class="row">
+                <div class="col-md-6">
+                  <p class="bg-warning p-2">公司名稱</p>
+                  <input id="org" type="text" class="form-control" placeholder="請輸入公司名稱">
+                </div>
+                <div class="col-md-6 mt-3 mt-md-0">
+                  <p class="bg-warning p-2">連絡電話</p>
+                  <input id="tel" type="number" class="form-control" placeholder="請輸入連絡電話">
                 </div>
               </div>
-              <div class="row align-items-center justify-content-center mt-4">
-                <img class="col-3 col-md-1" src="/static/imgs/SDGs_08.jpg" alt="">
-                <label class="col-3 col-md-1 col-form-label pr-0">支持，</label>
-                <div class="mt-3 mt-md-0 col-md-10 pl-md-0">
-                  <input type="text" class="form-control" placeholder="SDG 8 合適的工作與經濟成長，請留下您的支持評論。">
-                </div>
-              </div>
-              <div class="row align-items-center justify-content-center mt-4">
-                <img class="col-3 col-md-1" src="/static/imgs/SDGs_11.jpg" alt="">
-                <label class="col-3 col-md-1 col-form-label pr-0">支持，</label>
-                <div class="mt-3 mt-md-0 col-md-10 pl-md-0">
-                  <input type="text" class="form-control" placeholder="SDG 11 永續城鄉，請留下您的支持評論。">
-                </div>
-              </div>
-              <div class="row align-items-center justify-content-center mt-4">
-                <img class="col-3 col-md-1" src="/static/imgs/SDGs_15.jpg" alt="">
-                <label class="col-3 col-md-1 col-form-label pr-0">支持，</label>
-                <div class="mt-3 mt-md-0 col-md-10 pl-md-0">
-                  <input type="text" class="form-control" placeholder="SDG 15 陸地生態保育，請留下您的支持評論。">
-                </div>
-              </div>
-              <div class="row align-items-center justify-content-center mt-4">
-                <div class="col-3 col-md-1">
-                  <button type="button" class="btn btn-outline-dark rounded-0 w-100 d-none d-md-block" style="height: 49px">+</button>
-                  <button type="button" class="btn btn-outline-dark rounded-0 w-100 d-md-none" style="height: 63px">+</button>
-                </div>
-                <label class="col-3 col-md-1 col-form-label pr-0">支持，</label>
-                <div class="mt-3 mt-md-0 col-md-10 pl-md-0">
-                  <input type="text" class="form-control" placeholder="請留下您的支持評論。">
+            </div>
+          </div>
+          <div class="row mt-3 mt-md-4 pt-md-3 align-items-center justify-content-center">
+            <div class="col-10">
+              <div class="row">
+                <div class="col-12">
+                  <p class="bg-warning p-2">LOCATION <img class="ml-2" src="/static/imgs/place_marker.svg" alt="" style="width:20px"></p>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <div class="form-check d-flex align-items-center">
+                        <input class="form-check-input checkbox-1x" type="checkbox" id="location_1">
+                        <label class="form-check-label pl-3" for="gridCheck">
+                          1. T-PLANET @ 台北
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <div class="form-check d-flex align-items-center">
+                        <input class="form-check-input checkbox-1x" type="checkbox" id="location_2">
+                        <label class="form-check-label pl-3" for="gridCheck">
+                          2. T-PLANET @ 竹山
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <div class="form-check d-flex align-items-center">
+                        <input class="form-check-input checkbox-1x" type="checkbox" id="location_3">
+                        <label class="form-check-label pl-3" for="gridCheck">
+                          3. T-PLANET @ 高雄
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <div class="form-check d-flex align-items-center">
+                        <input class="form-check-input checkbox-1x" type="checkbox" id="location_4">
+                        <label class="form-check-label pl-3" for="gridCheck">
+                          4. T-PLANET @ 花蓮
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <div class="form-check d-flex align-items-center">
+                        <input class="form-check-input checkbox-1x" type="checkbox" id="location_5">
+                        <label class="form-check-label pl-3" for="gridCheck">
+                          5. T-PLANET @ 馬祖
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -206,16 +239,16 @@
           <div class="row mt-5 mb-5 pb-3">
             <div class="col-12 mt-5 d-none d-md-block">
               <div class="d-flex justify-content-between">
-                <button class="btn btn-primary" style="width: 20%">上一步</button>
-                <button class="btn btn-primary" style="width: 20%">檢視草稿</button>
-                <button class="btn btn-primary" style="width: 20%">儲存草稿</button>
+                <button id="btn_ab_project_prev" class="btn btn-primary" style="width: 20%">上一步</button>
+                <button id="btn_cms_plan_preview" class="btn btn-primary" style="width: 20%">檢視草稿</button>
+                <button id="btn_cms_plan_save" class="btn btn-primary" style="width: 20%">儲存草稿</button>
                 <button class="btn btn-primary" style="width: 20%">完成</button>
               </div>
             </div>
             <div class="col-12 mt-3 d-md-none">
-              <button class="btn btn-primary btn-block">上一步</button>
-              <button class="btn btn-primary btn-block mt-3">檢視草稿</button>
-              <button class="btn btn-primary btn-block mt-3">儲存草稿</button>
+              <button id="btn_ab_project_prev" class="btn btn-primary btn-block">上一步</button>
+              <button id="btn_cms_plan_preview" class="btn btn-primary btn-block mt-3">檢視草稿</button>
+              <button id="btn_cms_plan_save" class="btn btn-primary btn-block mt-3">儲存草稿</button>
               <button class="btn btn-primary btn-block mt-3">完成</button>
             </div>
           </div>

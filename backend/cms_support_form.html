@@ -17,6 +17,7 @@
     <script src="/static/js/config.js"></script>
     <script src="/static/js/localStorage.js"></script>
     <script src="/static/js/accounts.js"></script>
+    <script src="/static/js/cms_agent.js"></script>
   </head>
 
   <body>
@@ -155,154 +156,81 @@
     <!-- content -->
     <section>
       <div class="container">
-        <div class="row mt-5 align-items-center">
-          <div class="col-12">
-            <p class="bg-warning p-2">深度參與形式</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="border d-flex align-items-center justify-content-center h-100">
-              <img src="/static/imgs/image_icon.svg" width="100" height="100" alt="">
+        <form action="">
+          <div class="row mt-5 pt-3 align-items-center justify-content-center">
+            <div class="col-12">
+              <p class="bg-warning p-2">支持型表單形式</p>
             </div>
           </div>
-          <div class="col-md-6">
-            <form>
-              <div class="form-row">
-                <div class="form-group col-12 mt-3 mt-md-0">
-                  <label for="inputEvent">活動名稱</label>
-                  <input type="text" class="form-control" id="inputEvent" placeholder="">
-                </div>
-                <div class="form-group col-12">
-                  <label for="inputEvent">SDGs</label>
-                  <div class="d-flex flex-wrap">
-                    <a class="d-block" href="#">
-                      <img class="mr-3" src="/static/imgs/SDGs_04.jpg" alt="" style="width:60px">
-                    </a>
-                    <a class="d-block" href="#">
-                      <img class="mr-3" src="/static/imgs/SDGs_08.jpg" alt="" style="width:60px">
-                    </a>
-                    <a class="d-block" href="#">
-                      <img class="mr-3" src="/static/imgs/SDGs_11.jpg" alt="" style="width:60px">
-                    </a>
-                    <a class="d-block" href="#">
-                      <img class="mr-3" src="/static/imgs/SDGs_15.jpg" alt="" style="width:60px">
-                    </a>
-                    <button type="button" class="btn btn-outline-dark rounded-0 mt-3 mt-md-0" style="height:60px; width:60px" data-toggle="modal" data-target="#staticBackdrop">+</button>
-                  </div>
-                </div>
-                <div class="form-group col-12">
-                  <label for="inputDatePicker1">時間</label>
-                  <div class="row">
-                    <div class="col-6">
-                      <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
-                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
-                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group col-12 mb-0">
-                  <label for="textareaIdea">關係人口評論</label>
-                  <textarea class="form-control w-100" id="textareaIdea" placeholder="" style="resize: none"></textarea>
+          <div class="form-group row justify-content-center">
+            <div id="sdgs_container" class="col-md-10">
+              <!--
+	      <div class="row align-items-center justify-content-center">
+                <img class="col-3 col-md-1" src="/static/imgs/SDGs_04.jpg" alt="">
+                <label class="col-3 col-md-1 col-form-label pr-0">支持，</label>
+                <div class="mt-3 mt-md-0 col-md-10 pl-md-0">
+                  <input type="text" class="form-control" placeholder="SDG 4 良質教育，請留下您的支持評論。">
                 </div>
               </div>
-            </form>
-          </div>
-        </div>
-        <hr class="my-4">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="border d-flex align-items-center justify-content-center h-100">
-              <img src="/static/imgs/image_icon.svg" width="100" height="100" alt="">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <form>
-              <div class="form-row">
-                <div class="form-group col-12 mt-3 mt-md-0">
-                  <label for="inputEvent">活動名稱</label>
-                  <input type="text" class="form-control" id="inputEvent" placeholder="">
-                </div>
-                <div class="form-group col-12">
-                  <label for="inputEvent">SDGs</label>
-                  <div class="d-flex flex-wrap">
-                    <a class="d-block" href="#">
-                      <img class="mr-3" src="/static/imgs/SDGs_04.jpg" alt="" style="width:60px">
-                    </a>
-                    <a class="d-block" href="#">
-                      <img class="mr-3" src="/static/imgs/SDGs_08.jpg" alt="" style="width:60px">
-                    </a>
-                    <a class="d-block" href="#">
-                      <img class="mr-3" src="/static/imgs/SDGs_11.jpg" alt="" style="width:60px">
-                    </a>
-                    <a class="d-block" href="#">
-                      <img class="mr-3" src="/static/imgs/SDGs_15.jpg" alt="" style="width:60px">
-                    </a>
-                    <button type="button" class="btn btn-outline-dark rounded-0 mt-3 mt-md-0" style="height:60px; width:60px" data-toggle="modal" data-target="#staticBackdrop">+</button>
-                  </div>
-                </div>
-                <div class="form-group col-12">
-                  <label for="inputDatePicker1">時間</label>
-                  <div class="row">
-                    <div class="col-6">
-                      <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
-                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
-                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group col-12 mb-0">
-                  <label for="textareaIdea">關係人口評論</label>
-                  <textarea class="form-control w-100" id="textareaIdea" placeholder="" style="resize: none"></textarea>
+              <div class="row align-items-center justify-content-center mt-4">
+                <img class="col-3 col-md-1" src="/static/imgs/SDGs_08.jpg" alt="">
+                <label class="col-3 col-md-1 col-form-label pr-0">支持，</label>
+                <div class="mt-3 mt-md-0 col-md-10 pl-md-0">
+                  <input type="text" class="form-control" placeholder="SDG 8 合適的工作與經濟成長，請留下您的支持評論。">
                 </div>
               </div>
-            </form>
-          </div>
-        </div>
-        <hr class="my-4">
-        <div class="row mt-3">
-          <div class="col-12">
-            <button class="btn btn-block btn-outline-secondary">+</button>
-          </div>
-        </div>
-        <div class="row mt-5 mb-5 pb-3">
-          <div class="col-12 mt-5 d-none d-md-block">
-            <div class="d-flex justify-content-between">
-              <button class="btn btn-primary" style="width: 20%">上一步</button>
-              <button class="btn btn-primary" style="width: 20%">檢視草稿</button>
-              <button class="btn btn-primary" style="width: 20%">儲存草稿</button>
-              <button class="btn btn-primary" style="width: 20%">完成</button>
+              <div class="row align-items-center justify-content-center mt-4">
+                <img class="col-3 col-md-1" src="/static/imgs/SDGs_11.jpg" alt="">
+                <label class="col-3 col-md-1 col-form-label pr-0">支持，</label>
+                <div class="mt-3 mt-md-0 col-md-10 pl-md-0">
+                  <input type="text" class="form-control" placeholder="SDG 11 永續城鄉，請留下您的支持評論。">
+                </div>
+              </div>
+              <div class="row align-items-center justify-content-center mt-4">
+                <img class="col-3 col-md-1" src="/static/imgs/SDGs_15.jpg" alt="">
+                <label class="col-3 col-md-1 col-form-label pr-0">支持，</label>
+                <div class="mt-3 mt-md-0 col-md-10 pl-md-0">
+                  <input type="text" class="form-control" placeholder="SDG 15 陸地生態保育，請留下您的支持評論。">
+                </div>
+              </div>
+	      -->
+              <div class="row align-items-center justify-content-center mt-4">
+                <div class="col-3 col-md-1">
+		  <!--
+                  <button type="button" class="btn btn-outline-dark rounded-0 w-100 d-none d-md-block" style="height: 49px">+</button>
+                  <button type="button" class="btn btn-outline-dark rounded-0 w-100 d-md-none" style="height: 63px">+</button>
+		  -->
+                  <button type="button" class="btn btn-outline-dark rounded-0 w-100 d-none d-md-block" style="height: 49px" data-toggle="modal" data-target="#SDGsModal">+</button>
+                  <button type="button" class="btn btn-outline-dark rounded-0 w-100 d-md-none" style="height: 63px" data-toggle="modal" data-target="#SDGsModal">+</button>
+                </div>
+                <label class="col-3 col-md-1 col-form-label pr-0">新增，</label>
+                <div class="mt-3 mt-md-0 col-md-10 pl-md-0">
+		  <!-- <input type="text" class="form-control" placeholder="請留下您的支持評論。"> -->
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-12 mt-3 d-md-none">
-            <button class="btn btn-primary btn-block">上一步</button>
-            <button class="btn btn-primary btn-block mt-3">檢視草稿</button>
-            <button class="btn btn-primary btn-block mt-3">儲存草稿</button>
-            <button class="btn btn-primary btn-block mt-3">完成</button>
+          <div class="row mt-5 mb-5 pb-3">
+            <div class="col-12 mt-5 d-none d-md-block">
+              <div class="d-flex justify-content-between">
+		<!--<button class="btn btn-primary" style="width: 20%">上一步</button>-->
+                <a href="/backend/cms_missions_display.html" class="btn btn-primary" style="width: 20%">上一步</a>
+                <button class="btn btn-primary" style="width: 20%">檢視草稿</button>
+                <button class="btn btn-primary" style="width: 20%">儲存草稿</button>
+		<!--<button class="btn btn-primary" style="width: 20%">完成</button>-->
+		<button type="submit" id="btn_ab_project_next" class="btn btn-primary" style="width: 20%">下一步</button>
+              </div>
+            </div>
+            <div class="col-12 mt-3 d-md-none">
+	      <!--<button class="btn btn-primary btn-block">上一步</button>-->
+              <a href="/backend/cms_missions_display.html" class="btn btn-primary" style="width: 20%">上一步</a>
+              <button class="btn btn-primary btn-block mt-3">檢視草稿</button>
+              <button class="btn btn-primary btn-block mt-3">儲存草稿</button>
+	      <!--<button class="btn btn-primary btn-block mt-3">完成</button>-->
+	      <button type="submit" id="btn_ab_project_next" class="btn btn-primary" style="width: 20%">下一步</button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </section>
     <!-- footer -->
@@ -402,7 +330,7 @@
       </div>
     </footer>
     <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="SDGsModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -415,7 +343,7 @@
             <div style="height: 550px; overflow-y:auto;" class=" p-3">
               <div class="card">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="01" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_01.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 1 終結貧窮</p>
                   </div>
@@ -423,7 +351,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="02" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_02.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 2 消除飢餓</p>
                   </div>
@@ -431,7 +359,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="03" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_03.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 3 健康與福祉</p>
                   </div>
@@ -439,7 +367,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="04" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_04.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 4 優質教育</p>
                   </div>
@@ -447,7 +375,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="05" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_05.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 5 性別平等</p>
                   </div>
@@ -455,7 +383,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="06" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_06.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 6 淨水與衛生</p>
                   </div>
@@ -463,7 +391,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="07" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_07.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 7 永續能源</p>
                   </div>
@@ -471,7 +399,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="08" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_08.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 8 就業與經濟成長</p>
                   </div>
@@ -479,7 +407,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="09" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_09.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 9 永續工業、產業創新、韌性基礎建設</p>
                   </div>
@@ -487,7 +415,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="10" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_10.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 10 減少不平等</p>
                   </div>
@@ -495,7 +423,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="11" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_11.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 11 永續城鄉</p>
                   </div>
@@ -503,7 +431,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="12" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_12.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 12 永續消費與生產</p>
                   </div>
@@ -511,7 +439,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="13" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_13.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 13 氣候行動</p>
                   </div>
@@ -519,7 +447,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="14" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_14.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 14 海洋生態</p>
                   </div>
@@ -527,7 +455,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="15" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_15.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 15 陸地生態</p>
                   </div>
@@ -535,7 +463,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="16" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_16.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 16 和平與正義制度</p>
                   </div>
@@ -543,7 +471,7 @@
               </div>
               <div class="card mt-2">
                 <div class="card-body p-2">
-                  <div class="d-flex align-items-center">
+                  <div id="btn_sdg" name="17" class="d-flex align-items-center">
                     <img src="/static/imgs/SDGs_17.jpg" alt="" style="width: 50px" class="mr-2">
                     <p class="mb-0">SDG 17 全球夥伴</p>
                   </div>
@@ -553,7 +481,7 @@
           </div>
           <div class="modal-footer d-flex justify-content-center">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-primary">新增</button>
+            <button id="btn_add_sdg_into_task" type="button" class="btn btn-primary">新增</button>
           </div>
         </div>
       </div>

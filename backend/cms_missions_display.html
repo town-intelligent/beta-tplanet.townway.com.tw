@@ -17,9 +17,10 @@
     <script src="/static/js/config.js"></script>
     <script src="/static/js/localStorage.js"></script>
     <script src="/static/js/accounts.js"></script>
+    <script src="/static/js/cms_agent.js"></script>
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container">
@@ -156,106 +157,42 @@
     <section>
       <div class="container">
         <form action="">
-          <div class="row mt-5 pt-3 align-items-center justify-content-center">
-            <div class="col-10">
-              <div class="row">
-                <div class="col-md-6">
-                  <p class="bg-warning p-2">專案負責人</p>
-                  <input type="text" class="form-control" placeholder="請輸入負責人姓名">
-                </div>
-                <div class="col-md-6 mt-3 mt-md-0">
-                  <p class="bg-warning p-2">Email</p>
-                  <input type="email" class="form-control" placeholder="請輸入 Email">
-                </div>
+        <div class="row mt-3 mt-md-5 pt-md-3 align-items-center justify-content-center">
+          <div class="col-12">
+            <p>請選擇您預計呈現的方式</p>
+          </div>
+          <div class="col-md-8">
+            <div class="row mt-4 mb-md-5">
+              <div class="col-md-6">
+                <a id="btn_cms_plan_add_form_task" class="btn btn-outline-dark btn-lg btn-block">支持表單形式</a>
+              </div>
+              <div class="col-md-6">
+                <a href="/backend/cms_deep_participation.html" class="btn btn-outline-dark btn-lg btn-block mt-3 mt-md-0">深度參與形式</a>
               </div>
             </div>
           </div>
-          <div class="row mt-3 mt-md-4 pt-md-3 align-items-center justify-content-center">
-            <div class="col-10">
-              <div class="row">
-                <div class="col-md-6">
-                  <p class="bg-warning p-2">公司名稱</p>
-                  <input type="text" class="form-control" placeholder="請輸入公司名稱">
-                </div>
-                <div class="col-md-6 mt-3 mt-md-0">
-                  <p class="bg-warning p-2">連絡電話</p>
-                  <input type="number" class="form-control" placeholder="請輸入連絡電話">
-                </div>
-              </div>
-            </div>
+        </div>
+        <div class="row mt-5 mb-5 pb-3">
+          <div class="col-12 mt-5 d-none d-md-block">
+            <div class="d-flex justify-content-between">
+              <button id="btn_ab_project_prev" class="btn btn-primary" style="width: 20%">上一步</button>
+              <button class="btn btn-primary" style="width: 20%">檢視草稿</button>
+              <button class="btn btn-primary" style="width: 20%">儲存草稿</button>
+              <button type="submit" id="btn_ab_project_next" class="btn btn-primary" style="width: 20%" disabled>下一步</button>
+	    </div>
           </div>
-          <div class="row mt-3 mt-md-4 pt-md-3 align-items-center justify-content-center">
-            <div class="col-10">
-              <div class="row">
-                <div class="col-12">
-                  <p class="bg-warning p-2">LOCATION <img class="ml-2" src="/static/imgs/place_marker.svg" alt="" style="width:20px"></p>
-                  <div class="form-row">
-                    <div class="form-group col-md-4">
-                      <div class="form-check d-flex align-items-center">
-                        <input class="form-check-input checkbox-1x" type="checkbox" id="gridCheck">
-                        <label class="form-check-label pl-3" for="gridCheck">
-                          1. T-PLANET @ 台北
-                        </label>
-                      </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <div class="form-check d-flex align-items-center">
-                        <input class="form-check-input checkbox-1x" type="checkbox" id="gridCheck">
-                        <label class="form-check-label pl-3" for="gridCheck">
-                          2. T-PLANET @ 竹山
-                        </label>
-                      </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <div class="form-check d-flex align-items-center">
-                        <input class="form-check-input checkbox-1x" type="checkbox" id="gridCheck">
-                        <label class="form-check-label pl-3" for="gridCheck">
-                          3. T-PLANET @ 高雄
-                        </label>
-                      </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <div class="form-check d-flex align-items-center">
-                        <input class="form-check-input checkbox-1x" type="checkbox" id="gridCheck">
-                        <label class="form-check-label pl-3" for="gridCheck">
-                          4. T-PLANET @ 花蓮
-                        </label>
-                      </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <div class="form-check d-flex align-items-center">
-                        <input class="form-check-input checkbox-1x" type="checkbox" id="gridCheck">
-                        <label class="form-check-label pl-3" for="gridCheck">
-                          5. T-PLANET @ 澎湖
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-5 mb-5 pb-3">
-            <div class="col-12 mt-5 d-none d-md-block">
-              <div class="d-flex justify-content-between">
-                <button class="btn btn-primary" style="width: 20%">上一步</button>
-                <button class="btn btn-primary" style="width: 20%">檢視草稿</button>
-                <button class="btn btn-primary" style="width: 20%">儲存草稿</button>
-                <button class="btn btn-primary" style="width: 20%">完成</button>
-              </div>
-            </div>
-            <div class="col-12 mt-3 d-md-none">
-              <button class="btn btn-primary btn-block">上一步</button>
-              <button class="btn btn-primary btn-block mt-3">檢視草稿</button>
-              <button class="btn btn-primary btn-block mt-3">儲存草稿</button>
-              <button class="btn btn-primary btn-block mt-3">完成</button>
-            </div>
-          </div>
-        </form>
+          <div class="col-12 mt-3 d-md-none">
+            <button id="btn_ab_project_prev" class="btn btn-primary btn-block">上一步</button>
+            <button class="btn btn-primary btn-block mt-3">檢視草稿</button>
+            <button class="btn btn-primary btn-block mt-3">儲存草稿</button>
+            <button type="submit" id="btn_ab_project_next" class="btn btn-primary" style="width: 20%" disabled>下一步</button>
+	  </div>
+        </div>
+	</form>
       </div>
     </section>
     <!-- footer -->
-    <footer class="bg-gray">
+    <footer class="bg-gray mt-auto">
       <div class="container">
         <div class="row py-4 border-bottom border-secondary">
           <div class="col-md-8 d-none d-md-block">
